@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pawan Shukla - Chartered Accountant Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Professional Color Palette */
+            --primary-blue: #1e3a8a;
+            --secondary-blue: #3b82f6;
+            --accent-gold: #f59e0b;
+            --dark-navy: #0f172a;
+            --light-gray: #f8fafc;
+            --medium-gray: #64748b;
+            --dark-gray: #334155;
+            --white: #ffffff;
+            --success-green: #10b981;
+            --warning-orange: #f97316;
+            
+            /* Typography */
+            --font-primary: 'Inter', sans-serif;
+            --font-display: 'Playfair Display', serif;
+            
+            /* Spacing */
+            --section-padding: 6rem 0;
+            --container-padding: 0 2rem;
+            --border-radius: 0.5rem;
+            --border-radius-lg: 1rem;
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100%;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            line-height: 1.6;
+            color: var(--dark-gray);
+            background: var(--white);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--accent-gold);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark-gray);
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--secondary-blue) 100%);
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2rem;
+            font-weight: 500;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: var(--accent-gold);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: #d97706;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-blue);
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-image .profile-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .profile-card .icon {
+            font-size: 4rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .profile-card h3 {
+            color: var(--white);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: var(--section-padding);
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--container-padding);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--light-gray);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--dark-gray);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .skill-card {
+            background: var(--white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .skill-card i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .skill-card h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+        }
+
+        .skill-card p {
+            font-size: 0.9rem;
+            color: var(--medium-gray);
+        }
+
+        /* Academic Credentials Section */
+        .academics {
+            background: var(--white);
+        }
+
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .academic-card {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .academic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(30, 58, 138, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .academic-card:hover::before {
+            left: 100%;
+        }
+
+        .academic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .academic-header {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .academic-header i {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .academic-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .academic-header .year {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .academic-details {
+            text-align: center;
+        }
+
+        .academic-details .institution {
+            color: var(--medium-gray);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .academic-details .marks {
+            color: var(--primary-blue);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .academic-details .highlight {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        /* Services Section */
+        .services {
+            background: var(--light-gray);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            text-align: left;
+        }
+
+        .service-features li {
+            padding: 0.5rem 0;
+            color: var(--dark-gray);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .service-features li::before {
+            content: '✓';
+            color: var(--success-green);
+            font-weight: bold;
+        }
+
+        /* Experience Section */
+        .experience {
+            background: var(--light-gray);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--primary-blue);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            padding-right: 3rem;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 3rem;
+        }
+
+        .timeline-content {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            position: relative;
+        }
+
+        .timeline-content::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 0;
+            height: 0;
+            border: 10px solid transparent;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            right: -20px;
+            border-left-color: var(--white);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            left: -20px;
+            border-right-color: var(--white);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -10px;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .company {
+            color: var(--accent-gold);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-content .duration {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-content p {
+            color: var(--dark-gray);
+            line-height: 1.6;
+        }
+
+        /* Detailed Work Experience Section */
+        .detailed-work {
+            background: var(--light-gray);
+        }
+
+        .work-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-category {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+
+        .work-category:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .category-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .category-header i {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .category-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+        }
+
+        .achievement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .achievement-list li {
+            padding: 0.8rem 0;
+            color: var(--dark-gray);
+            line-height: 1.6;
+            position: relative;
+            padding-left: 2rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .achievement-list li:last-child {
+            border-bottom: none;
+        }
+
+        .achievement-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            top: 0.8rem;
+            color: var(--success-green);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Certifications Section */
+        .certifications {
+            background: var(--white);
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .cert-card {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cert-card:hover::before {
+            left: 100%;
+        }
+
+        .cert-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .cert-card i {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-card p {
+            color: var(--medium-gray);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .cert-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+        }
+
+        .cert-status-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .cert-status-badge.completed {
+            background: var(--success-green);
+            color: var(--white);
+        }
+
+        .cert-status-badge.in-progress {
+            background: var(--warning-orange);
+            color: var(--white);
+        }
+
+        .cert-year {
+            color: var(--primary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Technical Skills Section */
+        .technical-skills {
+            background: var(--light-gray);
+        }
+
+        .tech-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .tech-skill-card {
+            background: var(--white);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            text-align: center;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .tech-skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tech-icon {
+            font-size: 3rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .tech-skill-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .tech-skill-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-level span {
+            background: var(--accent-gold);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .certification-highlight {
+            margin-bottom: 3rem;
+        }
+
+        .cert-highlight-card {
+            background: var(--white);
+            border: 2px solid var(--primary-blue);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 2rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            flex-shrink: 0;
+        }
+
+        .cert-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-content p {
+            color: var(--medium-gray);
+            margin-bottom: 1rem;
+        }
+
+        .cert-topics {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 1rem;
+        }
+
+        .cert-topics li {
+            padding: 0.3rem 0;
+            color: var(--dark-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .cert-topics li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+            font-weight: bold;
+        }
+
+        .cert-status {
+            background: var(--warning-orange);
+            color: var(--white);
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            display: inline-block;
+        }
+
+        .soft-skills h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .soft-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .soft-skill-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+
+        .soft-skill-item:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .soft-skill-item i {
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            flex-shrink: 0;
+        }
+
+        .soft-skill-item span {
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        /* Leadership Section */
+        .leadership {
+            background: var(--white);
+        }
+
+        .leadership-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .leadership-card {
+            background: var(--light-gray);
+            border-radius: var(--border-radius-lg);
+            padding: 2rem;
+            display: flex;
+            gap: 1.5rem;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+            border-left: 4px solid var(--primary-blue);
+        }
+
+        .leadership-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .leadership-icon {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            flex-shrink: 0;
+            align-self: flex-start;
+        }
+
+        .leadership-details h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .leadership-location {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .leadership-description {
+            color: var(--dark-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .leadership-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-tag {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 0.3rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .personal-interests {
+            text-align: center;
+        }
+
+        .personal-interests h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+        }
+
+        .interests-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .interest-item {
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .interest-item:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .interest-item i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .interest-item span {
+            color: var(--dark-gray);
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .contact .section-header h2 {
+            color: var(--white);
+        }
+
+        .contact .section-header p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            width: 20px;
+        }
+
+        .contact-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: var(--border-radius-lg);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: var(--border-radius);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            font-family: inherit;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-navy);
+            color: var(--white);
+            padding: 3rem 0 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-gold);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3rem;
+                padding-right: 0;
+                text-align: left;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-content::before {
+                left: -20px;
+                right: auto;
+                border-right-color: var(--white);
+                border-left-color: transparent;
+            }
+
+            .timeline-item:nth-child(odd) .timeline-dot {
+                left: 10px;
+                right: auto;
+            }
+
+            .timeline-item:nth-child(even) .timeline-dot {
+                left: 10px;
+            }
+
+            .contact-content {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-calculator"></i>
+                <span>Pawan Shukla</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#academics">Academics</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#technical-skills">Skills</a></li>
+                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text fade-in">
+                <h1>Pawan Shukla</h1>
+                <div class="subtitle">Chartered Accountant - Financial Excellence & Strategic Advisory</div>
+                <p>
+                    With over 4+ years of experience in accounting, auditing, and financial consulting, 
+                    I provide comprehensive financial solutions to businesses and individuals. 
+                    Specializing in taxation, GST compliance, audit services, and strategic financial advisory.
+                </p>
+                <div class="cta-buttons">
+                    <a href="#contact" class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Get Consultation
+                    </a>
+                    <a href="#services" class="btn btn-secondary">
+                        <i class="fas fa-briefcase"></i>
+                        View Services
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image slide-in-right">
+                <div class="profile-card">
+                    <div class="icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Pawan Shukla</h3>
+                    <p>Chartered Accountant</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>About Me</h2>
+                <p>Dedicated to providing exceptional financial services with integrity and expertise</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text slide-in-left">
+                    <h3>Professional Summary</h3>
+                    <p>
+                        I am Pawan Shukla, a qualified Chartered Accountant with extensive experience in financial 
+                        management, auditing, and tax advisory services. My expertise spans across various 
+                        industries including manufacturing, retail, healthcare, and technology sectors.
+                    </p>
+                    <p>
+                        I specialize in helping businesses optimize their financial performance through 
+                        strategic planning, compliance management, and risk assessment. My approach combines 
+                        technical expertise with practical business insights to deliver measurable results.
+                    </p>
+                </div>
+                <div class="skills-grid slide-in-right">
+                    <div class="skill-card">
+                        <i class="fas fa-calculator"></i>
+                        <h4>Tax Planning</h4>
+                        <p>Strategic tax optimization and compliance</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-chart-pie"></i>
+                        <h4>Financial Analysis</h4>
+                        <p>Comprehensive financial reporting and analysis</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Auditing</h4>
+                        <p>Internal and external audit services</p>
+                    </div>
+                    <div class="skill-card">
+                        <i class="fas fa-handshake"></i>
+                        <h4>Business Advisory</h4>
+                        <p>Strategic financial consulting</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Credentials Section -->
+    <section id="academics" class="section academics">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Academic Credentials & Certificates</h2>
+                <p>Strong academic foundation with exceptional performance across all levels</p>
+            </div>
+            <div class="academic-grid">
+                <div class="academic-card fade-in">
+                    <div class="academic-header">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>CA Final</h3>
+                        <div class="year">May 2025</div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="institution">ICAI</div>
+                        <div class="marks">336/600 (56.0%)</div>
+                        <div class="highlight">3 Exemptions - AFM 69 Marks</div>
+                    </div>
+                </div>
+                <div class="academic-card fade-in">
+                    <div class="academic-header">
+                        <i class="fas fa-certificate"></i>
+                        <h3>CA Intermediate</h3>
+                        <div class="year">Nov 2020</div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="institution">ICAI</div>
+                        <div class="marks">456/800 (57.0%)</div>
+                        <div class="highlight">5 Exemptions</div>
+                    </div>
+                </div>
+                <div class="academic-card fade-in">
+                    <div class="academic-header">
+                        <i class="fas fa-award"></i>
+                        <h3>CPT</h3>
+                        <div class="year">June 2018</div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="institution">ICAI</div>
+                        <div class="marks">128/200 (64.0%)</div>
+                        <div class="highlight">1st Attempt</div>
+                    </div>
+                </div>
+                <div class="academic-card fade-in">
+                    <div class="academic-header">
+                        <i class="fas fa-university"></i>
+                        <h3>B. Com. (Banking and Finance)</h3>
+                        <div class="year">April 2022</div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="institution">BYK College of Commerce (SPPU)</div>
+                        <div class="marks">966/1200 (80.5%)</div>
+                        <div class="highlight">Passed with Distinction</div>
+                    </div>
+                </div>
+                <div class="academic-card fade-in">
+                    <div class="academic-header">
+                        <i class="fas fa-school"></i>
+                        <h3>Class XII – HSC</h3>
+                        <div class="year">May 2018</div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="institution">BYK College of Commerce (SPPU)</div>
+                        <div class="marks">568/650 (87.4%)</div>
+                        <div class="highlight">5th Rank Holder in College</div>
+                    </div>
+                </div>
+                <div class="academic-card fade-in">
+                    <div class="academic-header">
+                        <i class="fas fa-book"></i>
+                        <h3>Class X – SSC</h3>
+                        <div class="year">May 2016</div>
+                    </div>
+                    <div class="academic-details">
+                        <div class="institution">Sindhu Sagar Academy</div>
+                        <div class="marks">461/500 (92.2%)</div>
+                        <div class="highlight">Mathematics - 98 Marks</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Professional Services</h2>
+                <p>Comprehensive financial solutions tailored to your business needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>Tax Services</h3>
+                    <p>Complete tax planning, preparation, and compliance services for individuals and businesses.</p>
+                    <ul class="service-features">
+                        <li>Income Tax Returns</li>
+                        <li>Tax Planning & Strategy</li>
+                        <li>GST Compliance</li>
+                        <li>Tax Audit Support</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-building"></i>
+                    <h3>Business Advisory</h3>
+                    <p>Strategic financial consulting to help businesses grow and optimize their operations.</p>
+                    <ul class="service-features">
+                        <li>Financial Planning</li>
+                        <li>Business Valuation</li>
+                        <li>Investment Advisory</li>
+                        <li>Risk Management</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-search"></i>
+                    <h3>Audit & Assurance</h3>
+                    <p>Comprehensive audit services to ensure compliance and improve business processes.</p>
+                    <ul class="service-features">
+                        <li>Statutory Audits</li>
+                        <li>Internal Audits</li>
+                        <li>Due Diligence</li>
+                        <li>Compliance Reviews</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Financial Reporting</h3>
+                    <p>Accurate and timely financial reporting to support business decision-making.</p>
+                    <ul class="service-features">
+                        <li>Monthly Financials</li>
+                        <li>Annual Reports</li>
+                        <li>Management Reports</li>
+                        <li>Budget Planning</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-balance-scale"></i>
+                    <h3>Compliance Services</h3>
+                    <p>Ensure your business meets all regulatory requirements and stays compliant.</p>
+                    <ul class="service-features">
+                        <li>Company Law Compliance</li>
+                        <li>SEBI Regulations</li>
+                        <li>RBI Guidelines</li>
+                        <li>Industry Standards</li>
+                    </ul>
+                </div>
+                <div class="service-card fade-in">
+                    <i class="fas fa-users"></i>
+                    <h3>Startup Services</h3>
+                    <p>Comprehensive support for startups and new businesses to establish strong financial foundations.</p>
+                    <ul class="service-features">
+                        <li>Company Registration</li>
+                        <li>GST Registration</li>
+                        <li>Accounting Setup</li>
+                        <li>Funding Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section experience">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Professional Experience</h2>
+                <p>Building expertise through diverse industry experience</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Associated with Anurag Yadav & Associates</h3>
+                        <div class="company">Anurag Yadav & Associates, Nashik</div>
+                        <div class="duration">Jan 2025 – Jun 2025</div>
+                        <p>
+                            Currently working with a leading CA firm in Nashik, providing comprehensive 
+                            accounting and tax advisory services to diverse clientele. Specializing in 
+                            taxation, auditing, and business advisory services.
+                        </p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Assistant at ABHIJIT MODI & CO</h3>
+                        <div class="company">A.J. MODI & CO, Nashik</div>
+                        <div class="duration">Mar 2021 – Mar 2024</div>
+                        <p>
+                            Worked with a leading CA firm having over 40+ years of experience in the field 
+                            of Taxation in Nashik with 500+ clients. Gained extensive experience in 
+                            taxation, auditing, and compliance services across various industries.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Work Experience Section -->
+    <section id="detailed-work" class="section detailed-work">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Key Work Achievements</h2>
+                <p>Comprehensive expertise across taxation, auditing, and financial services</p>
+            </div>
+            <div class="work-categories">
+                <div class="work-category fade-in">
+                    <div class="category-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Taxation</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Prepared Computation of Income and filed 100+ Income Tax returns for clients operating in various sectors such as construction, hospitality, trading, etc. with total income ranging from Rs. 1 lakh to Rs.1 crore</li>
+                        <li>Engaged in Advance Tax calculations, preparing and advisory services</li>
+                        <li>Analyzed and executed TDS compliance by preparing and filing quarterly returns (Forms 24Q/26Q/27Q), reconciling ledgers with Form 26AS, and assisting with audit documentation</li>
+                        <li>Independent preparation and handling of returns under GST (GSTR-1 and GSTR-3B) for various clients including proprietorships, partnership firms and private limited companies including E way Bill verification</li>
+                        <li>Led the preparation, reconciliation, and filing of GSTR-9 and GSTR-9C for clients across diverse industries, ensuring accuracy and compliance with GST regulations</li>
+                    </ul>
+                </div>
+                <div class="work-category fade-in">
+                    <div class="category-header">
+                        <i class="fas fa-search"></i>
+                        <h3>Auditing & Assurance</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Lead audit assignments for various industries which included designing and implementation of audit program</li>
+                        <li>Conducted audits of traders, bicycle agencies, and auto-parts manufacturers by reviewing financial records, assessing internal controls, and identifying opportunities for improved compliance and efficiency</li>
+                        <li>Scrutinized ledgers, reconciliation of debtors and creditors, obtaining external confirmations</li>
+                        <li>Assisted in Internal Audit for Pharmaceutical Manufacturing Company and Listed Entity having Market Cap around ₹ 160 crores</li>
+                        <li>Drafted detailed audit reports highlighting findings and discrepancies including Inventory valuation and reviewing the SOP for Material inward for Listed entity</li>
+                    </ul>
+                </div>
+                <div class="work-category fade-in">
+                    <div class="category-header">
+                        <i class="fas fa-briefcase"></i>
+                        <h3>Miscellaneous</h3>
+                    </div>
+                    <ul class="achievement-list">
+                        <li>Prepared Financial Statements as per Schedule III of Corporate and Non-Corporate Entities having Turnovers in range of ₹ 1-10 crores</li>
+                        <li>Delivered informative office sessions on GST Composition Scheme and ITR Forms and its Applicability, enhancing team knowledge</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="section certifications">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Professional Certifications</h2>
+                <p>Recognized qualifications and continuous professional development</p>
+            </div>
+            <div class="cert-grid">
+                <div class="cert-card fade-in">
+                    <i class="fas fa-certificate"></i>
+                    <h3>Chartered Accountant (CA)</h3>
+                    <p>Institute of Chartered Accountants of India (ICAI)</p>
+                    <div class="cert-details">
+                        <div class="cert-status-badge completed">Qualified</div>
+                        <div class="cert-year">2025</div>
+                    </div>
+                </div>
+                <div class="cert-card fade-in">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Bachelor of Commerce (Banking & Finance)</h3>
+                    <p>BYK College of Commerce (SPPU)</p>
+                    <div class="cert-details">
+                        <div class="cert-status-badge completed">Completed</div>
+                        <div class="cert-year">2022</div>
+                    </div>
+                </div>
+                <div class="cert-card fade-in">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Financial Modeling & Valuation</h3>
+                    <p>Investment Banking Certification</p>
+                    <div class="cert-details">
+                        <div class="cert-status-badge in-progress">In Progress</div>
+                        <div class="cert-year">2025</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="technical-skills" class="section technical-skills">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Technical Skills & Certifications</h2>
+                <p>Proficiency in modern accounting software and continuous professional development</p>
+            </div>
+            <div class="tech-skills-grid">
+                <div class="tech-skill-card fade-in">
+                    <div class="tech-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>MS Office Suite</h3>
+                    <p>Advanced proficiency in Microsoft Excel, Word, and PowerPoint for financial analysis, reporting, and presentations</p>
+                    <div class="skill-level">
+                        <span>Advanced</span>
+                    </div>
+                </div>
+                <div class="tech-skill-card fade-in">
+                    <div class="tech-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Tally ERP</h3>
+                    <p>Hands-on experience with Tally ERP for comprehensive accounting, inventory management, and GST compliance</p>
+                    <div class="skill-level">
+                        <span>Expert</span>
+                    </div>
+                </div>
+                <div class="tech-skill-card fade-in">
+                    <div class="tech-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Tally Prime</h3>
+                    <p>Proficient in the latest version of Tally for modern accounting solutions and business management</p>
+                    <div class="skill-level">
+                        <span>Expert</span>
+                    </div>
+                </div>
+                <div class="tech-skill-card fade-in">
+                    <div class="tech-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Compu-Office Software</h3>
+                    <p>Experience with various office automation and accounting software solutions</p>
+                    <div class="skill-level">
+                        <span>Proficient</span>
+                    </div>
+                </div>
+            </div>
+            <div class="certification-highlight">
+                <div class="cert-highlight-card fade-in">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div class="cert-content">
+                        <h3>Financial Modeling & Valuation with Investment Banking</h3>
+                        <p>Currently pursuing certification course covering:</p>
+                        <ul class="cert-topics">
+                            <li>Fundamentals of Financial Modeling</li>
+                            <li>Advanced concepts and specialized topics</li>
+                            <li>Practical applications in real-world scenarios</li>
+                            <li>Investment Banking methodologies</li>
+                        </ul>
+                        <div class="cert-status">In Progress</div>
+                    </div>
+                </div>
+            </div>
+            <div class="soft-skills">
+                <h3>Professional Skills & Attributes</h3>
+                <div class="soft-skills-grid">
+                    <div class="soft-skill-item fade-in">
+                        <i class="fas fa-users"></i>
+                        <span>Work Coordination & Collaborative Teamwork</span>
+                    </div>
+                    <div class="soft-skill-item fade-in">
+                        <i class="fas fa-eye"></i>
+                        <span>Attention to Detail</span>
+                    </div>
+                    <div class="soft-skill-item fade-in">
+                        <i class="fas fa-lightbulb"></i>
+                        <span>Contributing Effectively to Decision-Making Processes</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership & Extra Curricular Activities Section -->
+    <section id="leadership" class="section leadership">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Leadership & Extra Curricular Activities</h2>
+                <p>Demonstrating leadership skills and community engagement beyond professional work</p>
+            </div>
+            <div class="leadership-content">
+                <div class="leadership-card fade-in">
+                    <div class="leadership-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="leadership-details">
+                        <h3>Cricket Tournament Organization</h3>
+                        <p class="leadership-location">Nashik</p>
+                        <p class="leadership-description">
+                            Successfully organized a cricket tournament in Nashik with participation of approximately 
+                            64 players, while actively contributing as a player. Demonstrated exceptional leadership, 
+                            coordination, and time management skills throughout the event planning and execution.
+                        </p>
+                        <div class="leadership-skills">
+                            <span class="skill-tag">Event Management</span>
+                            <span class="skill-tag">Team Coordination</span>
+                            <span class="skill-tag">Leadership</span>
+                            <span class="skill-tag">Sports Management</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="leadership-card fade-in">
+                    <div class="leadership-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <div class="leadership-details">
+                        <h3>Communication & Teamwork Excellence</h3>
+                        <p class="leadership-location">Professional Environment</p>
+                        <p class="leadership-description">
+                            Recognized for excellent communication skills and creating a positive work environment. 
+                            Trekking as a hobby has significantly improved teamwork and coordination abilities, 
+                            contributing to enhanced collaborative skills in professional settings.
+                        </p>
+                        <div class="leadership-skills">
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Team Building</span>
+                            <span class="skill-tag">Collaboration</span>
+                            <span class="skill-tag">Positive Environment</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="personal-interests">
+                <h3>Personal Interests & Hobbies</h3>
+                <div class="interests-grid">
+                    <div class="interest-item fade-in">
+                        <i class="fas fa-mountain"></i>
+                        <span>Trekking</span>
+                    </div>
+                    <div class="interest-item fade-in">
+                        <i class="fas fa-baseball-ball"></i>
+                        <span>Cricket</span>
+                    </div>
+                    <div class="interest-item fade-in">
+                        <i class="fas fa-users"></i>
+                        <span>Team Sports</span>
+                    </div>
+                    <div class="interest-item fade-in">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Event Organization</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Get In Touch</h2>
+                <p>Ready to discuss your financial needs? Let's connect!</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info slide-in-left">
+                    <h3>Contact Information</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 91751 59689</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>capawanshukla99@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-linkedin"></i>
+                        <span><a href="http://www.linkedin.com/in/ca-pawan99shukla" target="_blank" style="color: white; text-decoration: none;">LinkedIn Profile</a></span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Nashik, Maharashtra, India</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+                <div class="contact-form slide-in-right">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="your.email@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Service Required</label>
+                            <select id="service" name="service" style="width: 100%; padding: 1rem; border: 1px solid rgba(255, 255, 255, 0.3); border-radius: 0.5rem; background: rgba(255, 255, 255, 0.1); color: white;">
+                                <option value="">Select a service</option>
+                                <option value="tax">Tax Services</option>
+                                <option value="audit">Audit & Assurance</option>
+                                <option value="advisory">Business Advisory</option>
+                                <option value="compliance">Compliance Services</option>
+                                <option value="startup">Startup Services</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your requirements..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i>
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#academics">Academics</a>
+                <a href="#services">Services</a>
+                <a href="#experience">Experience</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#technical-skills">Skills</a>
+                <a href="#leadership">Leadership</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Pawan Shukla - Chartered Accountant. All rights reserved.</p>
+                <p>Professional financial services with integrity and excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar background on scroll
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+                navbar.style.boxShadow = 'none';
+            }
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all animated elements
+        document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+        });
+
+        // Add active class to navigation links on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-links a');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= (sectionTop - 200)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
