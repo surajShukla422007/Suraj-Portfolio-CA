@@ -512,6 +512,273 @@
             font-weight: bold;
         }
 
+        /* ITR Filing Section */
+        .itr-filing {
+            background: linear-gradient(180deg, #f8fafc 0%, #e0f2fe 100%);
+            position: relative;
+        }
+
+        .itr-filing::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+        }
+
+        .itr-header-banner {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            padding: 2.5rem 2rem;
+            border-radius: 16px;
+            margin-bottom: 3rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .itr-header-banner::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 0.8; }
+        }
+
+        .itr-header-banner h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .itr-header-banner p {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .itr-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .itr-info-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .itr-info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(30, 58, 138, 0.15);
+            border-left-width: 6px;
+        }
+
+        .itr-info-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .itr-info-card h3::before {
+            content: '📋';
+            font-size: 1.3rem;
+        }
+
+        .itr-info-card ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .itr-info-card ul li {
+            color: var(--dark-gray);
+            padding: 0.6rem 0;
+            padding-left: 1.8rem;
+            position: relative;
+            line-height: 1.5;
+            font-size: 0.95rem;
+        }
+
+        .itr-info-card ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .itr-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .itr-card {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid #6ee7b7;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .itr-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #10b981, #059669);
+        }
+
+        .itr-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(16, 185, 129, 0.3);
+            border-color: #10b981;
+        }
+
+        .itr-card-header {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(5, 150, 105, 0.15));
+            padding: 1.25rem 1rem;
+            text-align: center;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .itr-card-header h3 {
+            color: #047857;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+
+        .itr-card-body {
+            padding: 1.25rem 1rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .itr-card-description {
+            color: #065f46;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-weight: 500;
+            min-height: 60px;
+        }
+
+        .itr-requirements {
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+
+        .itr-requirements h4 {
+            color: #047857;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(16, 185, 129, 0.2);
+        }
+
+        .itr-requirements h4 i {
+            color: #10b981;
+            font-size: 1rem;
+        }
+
+        .itr-requirements ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .itr-requirements ul li {
+            color: #065f46;
+            padding: 0.4rem 0;
+            padding-left: 1.25rem;
+            position: relative;
+            font-size: 0.875rem;
+            line-height: 1.4;
+        }
+
+        .itr-requirements ul li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .itr-card-footer {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            padding: 1.25rem 1rem;
+            text-align: center;
+        }
+
+        .itr-price {
+            color: var(--white);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 0 0 0.75rem 0;
+            letter-spacing: -0.5px;
+        }
+
+        .itr-cta-button {
+            background: var(--white);
+            color: #4f46e5;
+            padding: 0.65rem 1.5rem;
+            border-radius: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .itr-cta-button:hover {
+            background: #fbbf24;
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(251, 191, 36, 0.4);
+        }
+
         /* Experience Section */
         .experience {
             background: var(--light-gray);
@@ -1096,6 +1363,17 @@
             width: 20px;
         }
 
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent-gold);
+            text-decoration: underline;
+        }
+
         .contact-form {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
@@ -1188,6 +1466,35 @@
             }
 
             .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .itr-header-banner h2 {
+                font-size: 1.8rem;
+            }
+
+            .itr-header-banner p {
+                font-size: 1rem;
+            }
+
+            .itr-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .itr-cards-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .itr-cards-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .itr-cards-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1294,12 +1601,8 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#academics">Academics</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#certifications">Certifications</a></li>
-                <li><a href="#technical-skills">Skills</a></li>
-                <li><a href="#leadership">Leadership</a></li>
+                <li><a href="#itr-filing">ITR Filing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -1386,90 +1689,6 @@
         </div>
     </section>
 
-    <!-- Academic Credentials Section -->
-    <section id="academics" class="section academics">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Academic Credentials & Certificates</h2>
-                <p>Strong academic foundation with exceptional performance across all levels</p>
-            </div>
-            <div class="academic-grid">
-                <div class="academic-card fade-in">
-                    <div class="academic-header">
-                        <i class="fas fa-graduation-cap"></i>
-                        <h3>CA Final</h3>
-                        <div class="year">May 2025</div>
-                    </div>
-                    <div class="academic-details">
-                        <div class="institution">ICAI</div>
-                        <div class="marks">336/600 (56.0%)</div>
-                        <div class="highlight">3 Exemptions - AFM 69 Marks</div>
-                    </div>
-                </div>
-                <div class="academic-card fade-in">
-                    <div class="academic-header">
-                        <i class="fas fa-certificate"></i>
-                        <h3>CA Intermediate</h3>
-                        <div class="year">Nov 2020</div>
-                    </div>
-                    <div class="academic-details">
-                        <div class="institution">ICAI</div>
-                        <div class="marks">456/800 (57.0%)</div>
-                        <div class="highlight">5 Exemptions</div>
-                    </div>
-                </div>
-                <div class="academic-card fade-in">
-                    <div class="academic-header">
-                        <i class="fas fa-award"></i>
-                        <h3>CPT</h3>
-                        <div class="year">June 2018</div>
-                    </div>
-                    <div class="academic-details">
-                        <div class="institution">ICAI</div>
-                        <div class="marks">128/200 (64.0%)</div>
-                        <div class="highlight">1st Attempt</div>
-                    </div>
-                </div>
-                <div class="academic-card fade-in">
-                    <div class="academic-header">
-                        <i class="fas fa-university"></i>
-                        <h3>B. Com. (Banking and Finance)</h3>
-                        <div class="year">April 2022</div>
-                    </div>
-                    <div class="academic-details">
-                        <div class="institution">BYK College of Commerce (SPPU)</div>
-                        <div class="marks">966/1200 (80.5%)</div>
-                        <div class="highlight">Passed with Distinction</div>
-                    </div>
-                </div>
-                <div class="academic-card fade-in">
-                    <div class="academic-header">
-                        <i class="fas fa-school"></i>
-                        <h3>Class XII – HSC</h3>
-                        <div class="year">May 2018</div>
-                    </div>
-                    <div class="academic-details">
-                        <div class="institution">BYK College of Commerce (SPPU)</div>
-                        <div class="marks">568/650 (87.4%)</div>
-                        <div class="highlight">5th Rank Holder in College</div>
-                    </div>
-                </div>
-                <div class="academic-card fade-in">
-                    <div class="academic-header">
-                        <i class="fas fa-book"></i>
-                        <h3>Class X – SSC</h3>
-                        <div class="year">May 2016</div>
-                    </div>
-                    <div class="academic-details">
-                        <div class="institution">Sindhu Sagar Academy</div>
-                        <div class="marks">461/500 (92.2%)</div>
-                        <div class="highlight">Mathematics - 98 Marks</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Services Section -->
     <section id="services" class="section services">
         <div class="section-container">
@@ -1548,288 +1767,46 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="section experience">
+    <!-- ITR Filing Section -->
+    <section id="itr-filing" class="section itr-filing">
         <div class="section-container">
-            <div class="section-header">
-                <h2>Professional Experience</h2>
-                <p>Building expertise through diverse industry experience</p>
+            <div class="itr-header-banner fade-in">
+                <h2>FY 2024-25 (AY 2025-26) ITR Filing</h2>
+                <p>Professional Income Tax Return Filing Services</p>
             </div>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Associated with Anurag Yadav & Associates</h3>
-                        <div class="company">Anurag Yadav & Associates, Nashik</div>
-                        <div class="duration">Jan 2025 – Jun 2025</div>
-                        <p>
-                            Currently working with a leading CA firm in Nashik, providing comprehensive 
-                            accounting and tax advisory services to diverse clientele. Specializing in 
-                            taxation, auditing, and business advisory services.
-                        </p>
-                    </div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3>Assistant at ABHIJIT MODI & CO</h3>
-                        <div class="company">A.J. MODI & CO, Nashik</div>
-                        <div class="duration">Mar 2021 – Mar 2024</div>
-                        <p>
-                            Worked with a leading CA firm having over 40+ years of experience in the field 
-                            of Taxation in Nashik with 500+ clients. Gained extensive experience in 
-                            taxation, auditing, and compliance services across various industries.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Detailed Work Experience Section -->
-    <section id="detailed-work" class="section detailed-work">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Key Work Achievements</h2>
-                <p>Comprehensive expertise across taxation, auditing, and financial services</p>
-            </div>
-            <div class="work-categories">
-                <div class="work-category fade-in">
-                    <div class="category-header">
-                        <i class="fas fa-calculator"></i>
-                        <h3>Taxation</h3>
-                    </div>
-                    <ul class="achievement-list">
-                        <li>Prepared Computation of Income and filed 100+ Income Tax returns for clients operating in various sectors such as construction, hospitality, trading, etc. with total income ranging from Rs. 1 lakh to Rs.1 crore</li>
-                        <li>Engaged in Advance Tax calculations, preparing and advisory services</li>
-                        <li>Analyzed and executed TDS compliance by preparing and filing quarterly returns (Forms 24Q/26Q/27Q), reconciling ledgers with Form 26AS, and assisting with audit documentation</li>
-                        <li>Independent preparation and handling of returns under GST (GSTR-1 and GSTR-3B) for various clients including proprietorships, partnership firms and private limited companies including E way Bill verification</li>
-                        <li>Led the preparation, reconciliation, and filing of GSTR-9 and GSTR-9C for clients across diverse industries, ensuring accuracy and compliance with GST regulations</li>
+            <div class="itr-info-grid">
+                <div class="itr-info-card fade-in">
+                    <h3>Last Date for ITR Filing (FY 2025)</h3>
+                    <ul>
+                        <li>Salaried Person: 15-Sept-2025</li>
+                        <li>Small Business: 15-Sept-2025</li>
+                        <li>Non Audit Entity: 15-Sept-2025</li>
+                        <li>Audited Case: 31-October-2025</li>
+                        <li>Tax Audit Date: 30-September-2025</li>
                     </ul>
                 </div>
-                <div class="work-category fade-in">
-                    <div class="category-header">
-                        <i class="fas fa-search"></i>
-                        <h3>Auditing & Assurance</h3>
-                    </div>
-                    <ul class="achievement-list">
-                        <li>Lead audit assignments for various industries which included designing and implementation of audit program</li>
-                        <li>Conducted audits of traders, bicycle agencies, and auto-parts manufacturers by reviewing financial records, assessing internal controls, and identifying opportunities for improved compliance and efficiency</li>
-                        <li>Scrutinized ledgers, reconciliation of debtors and creditors, obtaining external confirmations</li>
-                        <li>Assisted in Internal Audit for Pharmaceutical Manufacturing Company and Listed Entity having Market Cap around ₹ 160 crores</li>
-                        <li>Drafted detailed audit reports highlighting findings and discrepancies including Inventory valuation and reviewing the SOP for Material inward for Listed entity</li>
+                <div class="itr-info-card fade-in">
+                    <h3>Important Notes of AY 2025-26</h3>
+                    <ul>
+                        <li>Revised Tax Slabs (Up to 3 Lakhs: Nil Tax)</li>
+                        <li>Revised Rebate 87A (No tax up to 7 Lakhs)</li>
+                        <li>Tax Rate & Structure for FY 2024-25</li>
+                        <li>Important Announcements for This ITR</li>
                     </ul>
                 </div>
-                <div class="work-category fade-in">
-                    <div class="category-header">
-                        <i class="fas fa-briefcase"></i>
-                        <h3>Miscellaneous</h3>
-                    </div>
-                    <ul class="achievement-list">
-                        <li>Prepared Financial Statements as per Schedule III of Corporate and Non-Corporate Entities having Turnovers in range of ₹ 1-10 crores</li>
-                        <li>Delivered informative office sessions on GST Composition Scheme and ITR Forms and its Applicability, enhancing team knowledge</li>
+                <div class="itr-info-card fade-in">
+                    <h3>ITR-U Filing (Updated Return)</h3>
+                    <ul>
+                        <li>File ITR-U: If you missed ITR Filing</li>
+                        <li>Options to file ITR-U is open till 48 Months</li>
+                        <li>Extended deadline from 36 to 48 months</li>
+                        <li>Longer window for previously undisclosed income</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Certifications Section -->
-    <section id="certifications" class="section certifications">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Professional Certifications</h2>
-                <p>Recognized qualifications and continuous professional development</p>
-            </div>
-            <div class="cert-grid">
-                <div class="cert-card fade-in">
-                    <i class="fas fa-certificate"></i>
-                    <h3>Chartered Accountant (CA)</h3>
-                    <p>Institute of Chartered Accountants of India (ICAI)</p>
-                    <div class="cert-details">
-                        <div class="cert-status-badge completed">Qualified</div>
-                        <div class="cert-year">2025</div>
-                    </div>
-                </div>
-                <div class="cert-card fade-in">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h3>Bachelor of Commerce (Banking & Finance)</h3>
-                    <p>BYK College of Commerce (SPPU)</p>
-                    <div class="cert-details">
-                        <div class="cert-status-badge completed">Completed</div>
-                        <div class="cert-year">2022</div>
-                    </div>
-                </div>
-                <div class="cert-card fade-in">
-                    <i class="fas fa-chart-line"></i>
-                    <h3>Financial Modeling & Valuation</h3>
-                    <p>Investment Banking Certification</p>
-                    <div class="cert-details">
-                        <div class="cert-status-badge in-progress">In Progress</div>
-                        <div class="cert-year">2025</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Technical Skills Section -->
-    <section id="technical-skills" class="section technical-skills">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Technical Skills & Certifications</h2>
-                <p>Proficiency in modern accounting software and continuous professional development</p>
-            </div>
-            <div class="tech-skills-grid">
-                <div class="tech-skill-card fade-in">
-                    <div class="tech-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>MS Office Suite</h3>
-                    <p>Advanced proficiency in Microsoft Excel, Word, and PowerPoint for financial analysis, reporting, and presentations</p>
-                    <div class="skill-level">
-                        <span>Advanced</span>
-                    </div>
-                </div>
-                <div class="tech-skill-card fade-in">
-                    <div class="tech-icon">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <h3>Tally ERP</h3>
-                    <p>Hands-on experience with Tally ERP for comprehensive accounting, inventory management, and GST compliance</p>
-                    <div class="skill-level">
-                        <span>Expert</span>
-                    </div>
-                </div>
-                <div class="tech-skill-card fade-in">
-                    <div class="tech-icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <h3>Tally Prime</h3>
-                    <p>Proficient in the latest version of Tally for modern accounting solutions and business management</p>
-                    <div class="skill-level">
-                        <span>Expert</span>
-                    </div>
-                </div>
-                <div class="tech-skill-card fade-in">
-                    <div class="tech-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Compu-Office Software</h3>
-                    <p>Experience with various office automation and accounting software solutions</p>
-                    <div class="skill-level">
-                        <span>Proficient</span>
-                    </div>
-                </div>
-            </div>
-            <div class="certification-highlight">
-                <div class="cert-highlight-card fade-in">
-                    <div class="cert-icon">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <div class="cert-content">
-                        <h3>Financial Modeling & Valuation with Investment Banking</h3>
-                        <p>Currently pursuing certification course covering:</p>
-                        <ul class="cert-topics">
-                            <li>Fundamentals of Financial Modeling</li>
-                            <li>Advanced concepts and specialized topics</li>
-                            <li>Practical applications in real-world scenarios</li>
-                            <li>Investment Banking methodologies</li>
-                        </ul>
-                        <div class="cert-status">In Progress</div>
-                    </div>
-                </div>
-            </div>
-            <div class="soft-skills">
-                <h3>Professional Skills & Attributes</h3>
-                <div class="soft-skills-grid">
-                    <div class="soft-skill-item fade-in">
-                        <i class="fas fa-users"></i>
-                        <span>Work Coordination & Collaborative Teamwork</span>
-                    </div>
-                    <div class="soft-skill-item fade-in">
-                        <i class="fas fa-eye"></i>
-                        <span>Attention to Detail</span>
-                    </div>
-                    <div class="soft-skill-item fade-in">
-                        <i class="fas fa-lightbulb"></i>
-                        <span>Contributing Effectively to Decision-Making Processes</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Leadership & Extra Curricular Activities Section -->
-    <section id="leadership" class="section leadership">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>Leadership & Extra Curricular Activities</h2>
-                <p>Demonstrating leadership skills and community engagement beyond professional work</p>
-            </div>
-            <div class="leadership-content">
-                <div class="leadership-card fade-in">
-                    <div class="leadership-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <div class="leadership-details">
-                        <h3>Cricket Tournament Organization</h3>
-                        <p class="leadership-location">Nashik</p>
-                        <p class="leadership-description">
-                            Successfully organized a cricket tournament in Nashik with participation of approximately 
-                            64 players, while actively contributing as a player. Demonstrated exceptional leadership, 
-                            coordination, and time management skills throughout the event planning and execution.
-                        </p>
-                        <div class="leadership-skills">
-                            <span class="skill-tag">Event Management</span>
-                            <span class="skill-tag">Team Coordination</span>
-                            <span class="skill-tag">Leadership</span>
-                            <span class="skill-tag">Sports Management</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="leadership-card fade-in">
-                    <div class="leadership-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <div class="leadership-details">
-                        <h3>Communication & Teamwork Excellence</h3>
-                        <p class="leadership-location">Professional Environment</p>
-                        <p class="leadership-description">
-                            Recognized for excellent communication skills and creating a positive work environment. 
-                            Trekking as a hobby has significantly improved teamwork and coordination abilities, 
-                            contributing to enhanced collaborative skills in professional settings.
-                        </p>
-                        <div class="leadership-skills">
-                            <span class="skill-tag">Communication</span>
-                            <span class="skill-tag">Team Building</span>
-                            <span class="skill-tag">Collaboration</span>
-                            <span class="skill-tag">Positive Environment</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="personal-interests">
-                <h3>Personal Interests & Hobbies</h3>
-                <div class="interests-grid">
-                    <div class="interest-item fade-in">
-                        <i class="fas fa-mountain"></i>
-                        <span>Trekking</span>
-                    </div>
-                    <div class="interest-item fade-in">
-                        <i class="fas fa-baseball-ball"></i>
-                        <span>Cricket</span>
-                    </div>
-                    <div class="interest-item fade-in">
-                        <i class="fas fa-users"></i>
-                        <span>Team Sports</span>
-                    </div>
-                    <div class="interest-item fade-in">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Event Organization</span>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -1845,11 +1822,11 @@
                     <h3>Contact Information</h3>
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
-                        <span>+91 91751 59689</span>
+                        <span><a href="https://wa.me/919175159689" target="_blank" style="color: white; text-decoration: none;">+91 91751 59689</a></span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <span>capawanshukla99@gmail.com</span>
+                        <span><a href="mailto:pawan.shukla18012000@outlook.com" style="color: white; text-decoration: none;">pawan.shukla18012000@outlook.com</a></span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-linkedin"></i>
@@ -1857,11 +1834,11 @@
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>Nashik, Maharashtra, India</span>
+                        <span>Mumbai, Maharashtra, India</span>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-clock"></i>
-                        <span>Mon - Fri: 9:00 AM - 6:00 PM</span>
+                        <span>Mon - Sat</span>
                     </div>
                 </div>
                 <div class="contact-form slide-in-right">
@@ -1910,12 +1887,8 @@
             <div class="footer-links">
                 <a href="#home">Home</a>
                 <a href="#about">About</a>
-                <a href="#academics">Academics</a>
                 <a href="#services">Services</a>
-                <a href="#experience">Experience</a>
-                <a href="#certifications">Certifications</a>
-                <a href="#technical-skills">Skills</a>
-                <a href="#leadership">Leadership</a>
+                <a href="#itr-filing">ITR Filing</a>
                 <a href="#contact">Contact</a>
             </div>
             <div class="footer-bottom">
@@ -1974,7 +1947,44 @@
         // Form submission
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Create email subject
+            const subject = `New Inquiry from ${name} - CA Services`;
+            
+            // Create email body
+            const body = `
+New Client Inquiry Details:
+========================
+
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Service Required: ${service || 'Not specified'}
+
+Message:
+${message}
+
+========================
+This inquiry was submitted through the CA Portfolio Website.
+            `;
+            
+            // Create mailto link
+            const mailtoLink = `mailto:pawan.shukla18012000@outlook.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            
+            // Open email client
+            window.location.href = mailtoLink;
+            
+            // Show success message
+            setTimeout(() => {
+                alert('Thank you for your inquiry! Your email client will open with the message ready to send.');
+            }, 100);
         });
 
         // Add active class to navigation links on scroll
